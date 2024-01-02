@@ -26,6 +26,7 @@ cd agc && make
 git clone https://github.com/refresh-bio/agc
 cd agc
 mkdir build
+cd build
 cmake ..
 ```
 
