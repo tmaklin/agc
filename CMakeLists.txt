@@ -13,8 +13,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 ## Determine build type and set flags accordingly
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE Release) ## Build Release by default
+  set(c_cxx_shared_flags "-ffunction-sections -fdata-sections -Wl,-gc-sections -s -Wl,--strip-all -fmerge-all-constants -Wl,-z,norelro -fPIE -DNDEBUG -fno-exceptions")
 endif()
-set(c_cxx_shared_flags "-fPIC -Wall -g -O3 -m64 -mavx")
+set(c_cxx_shared_flags "${c_cxx_shared_flags} -fPIC -Wall -g -O3 -m64 -mavx")
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${c_cxx_shared_flags}")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${c_cxx_shared_flags} -fpermissive")
 
