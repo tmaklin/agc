@@ -15,10 +15,22 @@ On a AMD TR 3990X-based machine (32 threads used) it takes about 12 minutes to c
 
 ## Quick start
 
+### Compiling with make
 ```bash
 git clone https://github.com/refresh-bio/agc
 cd agc && make
+```
 
+### Compiling with cmake
+```bash
+git clone https://github.com/refresh-bio/agc
+cd agc
+mkdir build
+cmake ..
+```
+
+### Usage
+```
 # Compress a collection of 3 genomes
 ./agc create ref.fa in1.fa in2.fa > col.agc                         # file names given in command-line
 ./agc create ref.fa in1.fa.gz in2.fa.gz > col.agc                   # gzipped non-reference FASTA files
